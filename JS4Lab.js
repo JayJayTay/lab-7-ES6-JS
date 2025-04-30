@@ -44,6 +44,15 @@ Question 1: Declaring Let and Const variables`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+const whatIEat = "Salmon";
+let whatIDrink= "Wine";
+
+let myName= "Jevonne";
+let friendsName = "Shanna";
+
+// console.log(myName + " " + whatIDrink);
+
+
 //Question: Name a reason why you would use const instead of let.
 //Answer:
 
@@ -58,9 +67,13 @@ Question 2: Template Literals`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+
+console.log(`My friend ${friendsName} and I, ${myName}, are eating ${whatIEat} and drinking ${whatIDrink}.`)
+
+
 //Question: How would the sentence you wrote look if you used string concatenation instead of template literals?
 //          console.log() your answer to check
-//Answer:
+Answer: console.log("My friend " + friendsName + " and I, " + myName + ", are eating " + whatIEat + " and drinking " + whatIDrink + " .");
 console.log(`-------------------------- 
 Question 2a: Oh no`)
 
@@ -71,8 +84,15 @@ Question 2a: Oh no`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+console.log(whatIDrink= "Sprite"); //originally could not change variable because it was a const, later changed it to let keyword//
+
+
 //Question: Read the error message - in your own words - what does it mean?
-//Answer:
+/*Answer: The error message reads "Assignment to constant variable". This means that I
+cannot change the constant variable from what it is. Const to me means that that variable is 
+CONSTantly going to be said variable and there is nothing that we can do to change it unless we change
+the const declaration to let. Trying to reassign the variable from "wine" to "spirte" while the declaration 
+keyword was "const" was invalid */
 
 /*---------------------------------- Arrow Functions -------------------------------------*/
 console.log(`-------------------------- 
@@ -91,8 +111,18 @@ Question 3: Arrow Functions`)
  *         console.log(lunchTime('Pizza','Water'))
  * ↓ YOUR CODE HERE ↓ */
 
+
+
+const lunchTime = (foodChoice, drinkChoice) => `My friend, ${friendsName}, and I, ${myName}, are eating ${foodChoice} and drinking ${drinkChoice}.`;
+console.log(lunchTime('Pizza','Water'))
+
 //Question: What would your function look like if we were using the old way of creating a function?
 //Answer:
+
+function lunchtime (foodChoice, drinkChoice){
+   return `My friend, ${friendsName}, and I, ${myName}, are eating ${foodChoice} and drinking ${drinkChoice}.`;
+}
+console.log(lunchtime('Pizza', 'Water'));
 
 /*---------------------------------- Callbacks -------------------------------------*/
 console.log(`-------------------------- 
@@ -108,4 +138,8 @@ Question 4: Callbacks`)
  *
  * ↓ YOUR CODE HERE ↓ */
 
+
+const foodForTodayAndTomorrow = (tomorrowsFoodChoice, tomorrowsDrinkChoice, callbackFunction) => `${callbackFunction} Tomorrow we want ${tomorrowsFoodChoice} and ${tomorrowsDrinkChoice}`;
+
+console.log(foodForTodayAndTomorrow("Chicken", "Cola", lunchTime("Salad", "Green Tea")));
 console.log(`-----------Finished------------`)
